@@ -1,0 +1,58 @@
+body {
+  background-color: #4B7399;
+  color: #222;
+  font-family: helvetica, arial, sans-serif;
+  font-size: 13px;
+}
+
+a {
+  color: #0000FF;
+}
+
+header {
+  margin-bottom: 2em;
+}
+
+header h1 {
+  font-size: 1.2em;
+  color: #2A5177;
+  font-weight: normal;
+}
+
+header a {
+  float: right;
+  font-weight: normal;
+}
+
+#wrapper {
+  width: 75%;
+  margin: 0 auto;
+}
+
+#content {
+  background-color: #FFF;
+  padding: 25px 40px;
+  border: solid 1px black;
+  margin-top: 30px;  
+}
+
+footer {
+  text-align: right;
+  margin: 0.7em 0 1em;
+}
+
+footer a {
+  color: #111;
+}
+
+table {
+  margin-top: 10em;
+}
+
+table thead tr th {
+  text-align: left;
+}
+
+.dataTables_paginate {
+  display: none;
+}
