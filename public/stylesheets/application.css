@@ -14,14 +14,15 @@ header {
 }
 
 header h1 {
-  font-size: 1.2em;
+  font-size: 1.5em;
   color: #2A5177;
   font-weight: normal;
 }
 
-header a {
+header h1 a {
   float: right;
   font-weight: normal;
+  font-size: 0.8em;
 }
 
 #wrapper {
@@ -43,6 +44,15 @@ footer {
 
 footer a {
   color: #111;
+}
+
+.hint {
+  font-size: 1em;
+  font-style: italic;  
+}
+
+.visualsearch {
+  margin: 0.2em 0 1em;
 }
 
 table {

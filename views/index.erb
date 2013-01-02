@@ -7,6 +7,8 @@
   <link rel="icon" href="/images/favicon.png" type="image/png">
   <link rel="stylesheet" href="/stylesheets/jquery.dataTables.css">
   <link rel="stylesheet" href="/stylesheets/jquery.dataTables_themeroller.css">
+  <link rel="stylesheet" href="/stylesheets/visualsearch-datauri.css">
+  <link rel="stylesheet" href="/stylesheets/visualsearch.css">
   <link rel="stylesheet" href="/stylesheets/application.css">
 </head>
 <body>
@@ -19,6 +21,8 @@
         </h1>
       </header>
 
+      <small class="hint">Try searching for <b>strength</b> or <b>checking</b>:</small>
+      <div class="visualsearch"></div>
       <table class="languages">
         <thead>
           <tr>
@@ -36,7 +40,8 @@
     </footer>
   </div>
 
-  <script src="/javascripts/jquery-1.8.3.min.js"></script>
+  <script src="/javascripts/dependencies.js"></script>
+  <script src="/javascripts/visualsearch.js"></script>
   <script src="/javascripts/jquery.dataTables.min.js"></script>
   <script src="/javascripts/application.js"></script>
 </body>
