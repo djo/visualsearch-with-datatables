@@ -13,8 +13,8 @@ $(function () {
       },
       valueMatches: function(facet, searchTerm, callback) {
         switch (facet) {
-          case 'strength': callback(['strong', 'weak']);    break
-          case 'checking': callback(['static', 'dynamic']); break
+          case 'strength': callback(['strong', 'varies-by-dialect', 'weak']); break
+          case 'checking': callback(['dynamic', 'n/a', 'partially-dynamic', 'static']); break
         }
       }
     }

@@ -1,6 +1,5 @@
 require 'sinatra'
 require "sinatra/json"
-require 'sinatra/reloader' if development?
 
 get '/' do
   erb :index
@@ -25,10 +24,19 @@ end
 
 class Languages
   DATA = [
+    ['Ada', 'strong', 'partially-dynamic'],
+    ['Basic', 'varies-by-dialect', 'n/a'],
+    ['C', 'weak', 'static'],
+    ['C++', 'strong', 'static'],
+    ['Clojure', 'strong', 'dynamic'],
     ['Erlang', 'strong', 'dynamic'],
+    ['Go', 'strong', 'static'],
+    ['Haskell', 'strong', 'static'],
     ['Java', 'strong', 'static'],
     ['JavaScript', 'weak', 'dynamic'],
-    ['Ruby', 'strong', 'dynamic']
+    ['Python', 'strong', 'dynamic'],
+    ['Ruby', 'strong', 'dynamic'],
+    ['Scala', 'strong', 'static']
   ]
 
   COLUMNS = { 'strength' => 1, 'checking' => 2 }
