@@ -22,7 +22,6 @@ $(function () {
 
   table = $('table.languages').dataTable({
     bFilter: false,
-    bSort: false,
     bInfo: false,
     bLengthChange: false,
     iDisplayLength: 100,

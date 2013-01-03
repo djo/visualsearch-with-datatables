@@ -7,13 +7,19 @@ get '/' do
 end
 
 get '/list.json' do
-  data = Languages.new(params[:search]).filter
+  options = {
+    search: params[:search],
+    column: params[:iSortCol_0],
+    direction: params[:sSortDir_0]
+  }
+
+  data = Languages.new(options).filter
 
   json({
     aaData: data,
     sEcho: params[:sEcho],
     iTotalRecords: Languages::DATA.length,
-    iTotalDisplayRecords: data.size
+    iTotalDisplayRecords: data.length
   })
 end
 
@@ -27,23 +33,32 @@ class Languages
 
   COLUMNS = { 'strength' => 1, 'checking' => 2 }
 
-  def initialize(conditions)
-    @conditions = conditions || {}
+  def initialize(options)
+    @search    = options[:search] || {}
+    @column    = options[:column].to_i
+    @direction = options[:direction] == 'asc' ? 1 : -1
   end
 
   def filter
-    return DATA if @conditions.length == 0
-    DATA.select { |language| match?(language) }
+    filtered = DATA.select { |l| match?(l) }
+    filtered.sort { |l1, l2| compare(l1, l2) }
   end
 
   private
 
   def match?(language)
-    @conditions.each do |name, options|
+    @search.each do |name, options|
       value = language[COLUMNS[name]]
       return false unless options.include?(value)
     end
 
     true
+  end
+
+  def compare(language1, language2)
+    column1 = language1[@column]
+    column2 = language2[@column]
+
+    (column1 <=> column2) * @direction
   end
 end
